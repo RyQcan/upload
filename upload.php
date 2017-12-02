@@ -107,16 +107,13 @@ function render($upfile)
     $destination = "./uploadfile/" . $upfile["name"];
     if(move_uploaded_file($upfile["tmp_name"], $destination))
     {
-        //使用上传的图片生成新的图片
-        $im = imagecreatefromjpeg($destination);
-
-        //给新图片指定文件名
-        srand(time());
-        $newfilename = strval(rand()).".jpg";
-        print "<pre>new file name $newfilename </pre>";
+        $im = imagecreatefromjpeg($destination);//使用上传的图片生成新的图片
+        $newfilename =md5(uniqid(microtime())).".jpg";
+        echo "上传文件名：".$newfilename."<br/>";
         $newimagepath ="./uploadfile/".$newfilename;
         imagejpeg($im,$newimagepath);
-        //显示二次渲染后的图片（使用用户上传图片生成的新图片）
+        echo "上传文件类型:" . $upfile["type"] . "<br/>";
+        echo"上传文件路径:".$newimagepath."<br/>";
         echo "<img src=" .  $newimagepath . ">";
         unlink($destination);
     }
