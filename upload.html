@@ -3,14 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
 <form  onsubmit="return uploadname()" method="post" name="form1" action="upload.php" enctype="multipart/form-data">
-    <label for="file">文件：</label>
-    <input type="file" name="file" id="file"/>
-    <input type="submit" name="submit" value="提交">
+    <div class="form-group">
+        <label for="file">文件：</label>
+        <input type="file" class="form-control-file" name="file" id="file"/>
+    </div>
+
+    <div class="form-group">
+        <label for="choices">Example multiple select</label>
+        <select  class="form-control" id="choices" name="choices">
+            <option value="mime" >JS+MIME</option>
+            <option value="blacklist">后缀名黑名单</option>
+            <option name="whitelist">后缀名白名单</option>
+            <option value="rename">后缀名随机+重命名</option>
+            <option value="fileheader">文件头过滤</option>
+            <option value="render">文件二次渲染</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script language="javascript">
     function uploadname()
     {
