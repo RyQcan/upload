@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf-8");
 if(!is_uploaded_file($_FILES["file"]["tmp_name"]))
 {
     echo"上传失败！";
@@ -43,7 +44,7 @@ function mime($upfile)
 
 function blacklist($upfile)
 {
-    $deny_ext=array('.asp','.php','.aspx','.jsp');//黑名单
+    $deny_ext=array('.asp','.php','.php4','.php5','.aspx','.jsp');//黑名单
     $file_ext=strrchr($upfile['name'],'.');
     if(in_array($file_ext,$deny_ext))
         echo"上传失败!";

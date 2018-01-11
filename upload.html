@@ -8,12 +8,12 @@
 <body>
 <form  onsubmit="return uploadname()" method="post" name="form1" action="upload.php" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="file">文件：</label>
+        <label for="file">上传文件：</label>
         <input type="file" class="form-control-file" name="file" id="file"/>
     </div>
 
     <div class="form-group">
-        <label for="choices">Example multiple select</label>
+        <label for="choices">选择防护方式</label>
         <select  class="form-control" id="choices" name="choices">
             <option value="mime" >JS+MIME</option>
             <option value="blacklist">后缀名黑名单</option>
@@ -25,15 +25,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-
-
-
-
-
-
-
-
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -61,8 +52,9 @@
         }
     }
 </script>
+
 </body>
-
-
+<br/>
+<a href="./include.html">goto include</a>
 
 </html>
